@@ -7,6 +7,8 @@
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
 	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="kondisi1" class="java.lang.String"/>
+	<parameter name="kondisi2" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT
      barang_keluar.`id_barang_keluar` AS barang_keluar_id_barang_keluar,
@@ -17,7 +19,9 @@
      barang_keluar.`tgl_keluar` AS barang_keluar_tgl_keluar,
      barang_keluar.`jumlah` AS barang_keluar_jumlah
 FROM
-     `barang_keluar` barang_keluar]]>
+     `barang_keluar` barang_keluar
+WHERE
+     tgl_keluar BETWEEN $P{kondisi1} AND $P{kondisi2}]]>
 	</queryString>
 	<field name="barang_keluar_id_barang_keluar" class="java.lang.Integer"/>
 	<field name="barang_keluar_id_barang" class="java.lang.String"/>
@@ -59,17 +63,17 @@ FROM
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement uuid="d78223c7-28e7-43ea-a556-3a15d7182dfb" style="Column header" x="0" y="19" width="79" height="15"/>
+				<reportElement uuid="d78223c7-28e7-43ea-a556-3a15d7182dfb" style="Column header" x="0" y="19" width="63" height="15"/>
 				<textElement/>
 				<text><![CDATA[ID Stok Keluar]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="b2abf68a-55c4-4984-94e0-636b1c5ffbb0" style="Column header" x="79" y="19" width="79" height="15"/>
+				<reportElement uuid="b2abf68a-55c4-4984-94e0-636b1c5ffbb0" style="Column header" x="68" y="19" width="79" height="15"/>
 				<textElement/>
 				<text><![CDATA[ID Barang]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="42d68acf-3e59-4309-88b3-bf3424511197" style="Column header" x="158" y="19" width="79" height="15"/>
+				<reportElement uuid="42d68acf-3e59-4309-88b3-bf3424511197" style="Column header" x="147" y="19" width="79" height="15"/>
 				<textElement/>
 				<text><![CDATA[Nama Barang]]></text>
 			</staticText>
@@ -104,17 +108,17 @@ FROM
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement uuid="9962b3ef-f793-4b82-8f7a-da3f36b849a1" style="Detail" x="0" y="0" width="79" height="15"/>
+				<reportElement uuid="9962b3ef-f793-4b82-8f7a-da3f36b849a1" style="Detail" x="0" y="0" width="63" height="15"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{barang_keluar_id_barang_keluar}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="1f607dfc-6019-4391-8474-b7d9d8121103" style="Detail" x="79" y="0" width="79" height="15"/>
+				<reportElement uuid="1f607dfc-6019-4391-8474-b7d9d8121103" style="Detail" x="68" y="0" width="79" height="15"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{barang_keluar_id_barang}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="2b12e54d-5dab-4341-a639-d2b4bdab72cf" style="Detail" x="158" y="0" width="79" height="15"/>
+				<reportElement uuid="2b12e54d-5dab-4341-a639-d2b4bdab72cf" style="Detail" x="147" y="0" width="79" height="15"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{barang_keluar_nama_barang}]]></textFieldExpression>
 			</textField>

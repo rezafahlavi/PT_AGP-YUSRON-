@@ -3,6 +3,7 @@ package UI;
 
 import java.io.File;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -228,7 +229,7 @@ public class laporan_stok_masuk extends javax.swing.JFrame {
 
     private void jprintsemuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jprintsemuaActionPerformed
         try{
-            String namaFile = "src/laporan/lap_stok_masuk.jasper";
+            String namaFile = "src/laporan/lap_stok_masuk_semua.jasper";
             Connection conn = new koneksi().GetConnection();
             HashMap parameter = new HashMap();
             File report_file = new File(namaFile);
@@ -242,7 +243,27 @@ public class laporan_stok_masuk extends javax.swing.JFrame {
     }//GEN-LAST:event_jprintsemuaActionPerformed
 
     private void jcustomprintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcustomprintActionPerformed
-        // TODO add your handling code here:
+        try{
+            String namaFile = "src/laporan/lap_stok_masuk.jasper";
+            Connection conn = new koneksi().GetConnection();
+            HashMap parameter = new HashMap();
+            
+            String tgl = "yyyy-MM-dd";
+            SimpleDateFormat fm = new SimpleDateFormat(tgl);
+            String tanggal = String.valueOf(fm.format(ctglawal.getDate()));
+            String tanggal2 = String.valueOf(fm.format(ctglakhir.getDate()));
+            
+            parameter.put("kondisi1",tanggal);
+            parameter.put("kondisi2",tanggal2);
+            
+            File report_file = new File(namaFile);
+            JasperReport jasperReport = (JasperReport) JRLoader.loadObject(report_file.getPath());
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,parameter, conn);
+            JasperViewer.viewReport(jasperPrint, false);
+            JasperViewer.setDefaultLookAndFeelDecorated(true);
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_jcustomprintActionPerformed
 
     private void bmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bmenuActionPerformed

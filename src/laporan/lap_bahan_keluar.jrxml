@@ -7,6 +7,8 @@
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
 	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="kondisi1" class="java.lang.String"/>
+	<parameter name="kondisi2" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT
      bahan_keluar.`id_bahan_keluar` AS bahan_keluar_id_bahan_keluar,
@@ -17,7 +19,9 @@
      bahan_keluar.`tgl_keluar` AS bahan_keluar_tgl_keluar,
      bahan_keluar.`jumlah` AS bahan_keluar_jumlah
 FROM
-     `bahan_keluar` bahan_keluar]]>
+     `bahan_keluar` bahan_keluar
+WHERE
+     tgl_keluar BETWEEN $P{kondisi1} AND $P{kondisi2}]]>
 	</queryString>
 	<field name="bahan_keluar_id_bahan_keluar" class="java.lang.Integer"/>
 	<field name="bahan_keluar_id_bahan" class="java.lang.String"/>

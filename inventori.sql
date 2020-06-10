@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2020 at 11:07 PM
+-- Generation Time: Jun 10, 2020 at 06:16 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -119,7 +119,7 @@ INSERT INTO `barang` (`id_barang`, `nama_barang`, `ukuran`, `berat`, `jumlah`) V
 (3, 'Paku 4 Inch', '4x8', 30, 400),
 (4, 'Paku 5 inch', '5x6', 30, 300),
 (5, 'Paku 2 inch', '2x12', 10, 200),
-(6, 'Paku 3 inch', '3x10', 10, 650),
+(6, 'Paku 3 inch', '3x10', 10, 575),
 (7, 'Paku 4 inch', '4x8', 10, 300),
 (8, 'Paku 5 inch', '5x6', 10, 300);
 
@@ -144,7 +144,9 @@ CREATE TABLE `barang_keluar` (
 --
 
 INSERT INTO `barang_keluar` (`id_barang_keluar`, `id_barang`, `nama_barang`, `berat`, `ukuran`, `tgl_keluar`, `jumlah`) VALUES
-(1, '1', 'Paku 2 inch', '30', '2x12', '2020-06-02', 50);
+(1, '1', 'Paku 2 inch', '30', '2x12', '2020-06-02', 50),
+(2, '6', 'Paku 3 inch', '10', '3x10', '2020-06-02', 50),
+(3, '6', 'Paku 3 inch', '10', '3x10', '2020-06-03', 25);
 
 -- --------------------------------------------------------
 
@@ -176,13 +178,15 @@ INSERT INTO `barang_masuk` (`id_barang_masuk`, `id_barang`, `nama_barang`, `bera
 --
 
 CREATE TABLE `penjualan` (
-  `id_penjualan` varchar(20) NOT NULL,
+  `id_penjualan` int(20) NOT NULL,
+  `nama_barang` varchar(20) NOT NULL,
+  `berat` varchar(20) NOT NULL,
   `pemesan` varchar(50) NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `no_tlp` varchar(20) NOT NULL,
   `tgl_keluar` date NOT NULL,
-  `id_barang` varchar(20) NOT NULL,
-  `jumlah` int(20) NOT NULL
+  `jumlah` int(20) NOT NULL,
+  `keterangan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -288,13 +292,19 @@ ALTER TABLE `barang`
 -- AUTO_INCREMENT for table `barang_keluar`
 --
 ALTER TABLE `barang_keluar`
-  MODIFY `id_barang_keluar` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_barang_keluar` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
   MODIFY `id_barang_masuk` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `penjualan`
+--
+ALTER TABLE `penjualan`
+  MODIFY `id_penjualan` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
