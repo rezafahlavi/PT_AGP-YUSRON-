@@ -1,4 +1,3 @@
-
 package UI;
 
 import java.sql.*;
@@ -8,11 +7,13 @@ import koneksi.koneksi;
 import java.text.*;
 import java.io.File;
 import java.util.HashMap;
+import java.text.SimpleDateFormat;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
+
 
 public class penjualan extends javax.swing.JFrame {
     private Connection conn=new koneksi().GetConnection();
@@ -20,6 +21,8 @@ public class penjualan extends javax.swing.JFrame {
     public penjualan() {
         initComponents();
         r30kg.setSelected(true);
+        
+        
     }
 
             
@@ -29,9 +32,43 @@ public class penjualan extends javax.swing.JFrame {
          tjumlah.setText("");
          tcekstok.setText("");
          tketerangan.setText("");
-
-
+         
      }
+     
+     public void pesanberikutnya(){
+
+        String tgl = "yyyy-MM-dd";
+        SimpleDateFormat fm = new SimpleDateFormat(tgl);
+        String tanggal = String.valueOf(fm.format(ctglkeluar.getDate()));
+        try{
+            String berat="";
+            if(r30kg.isSelected()) berat="30";
+            else berat="10";
+
+            String sql="insert into penjualan (nama_barang,berat,pemesan,alamat,no_tlp,tgl_keluar,jumlah,keterangan)"
+            +"values"+"('"+cbnamabarang.getSelectedItem().toString()+"','"+berat+"',"
+            + "'"+tpemesan.getText()+"','"+talamat.getText()+"',"        
+            + "'"+ttelepon.getText()+"','"+tanggal+"','"+tjumlah.getText()+"','"+tketerangan.getText()+"' )";
+
+            PreparedStatement stat=conn.prepareStatement(sql);
+            stat.executeUpdate();
+
+            String sql2="UPDATE barang set jumlah=jumlah - '"+tjumlah.getText()+"' "
+                    + "where nama_barang='"+cbnamabarang.getSelectedItem().toString()+"' && berat='"+berat+"'";
+            PreparedStatement stat2= conn.prepareStatement(sql2);
+            stat2.executeUpdate();
+            
+            
+            JOptionPane.showMessageDialog(null, "Silahkan Masukan Pesanan Oleh Pemesan Dan Tanggal Yang Sama");
+
+            kosong();
+
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Maaf Terjadi Kesalahan");
+        }
+     
+     }
+     
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -70,9 +107,9 @@ public class penjualan extends javax.swing.JFrame {
         bcekstok = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         talamat = new javax.swing.JTextArea();
-        ctglkeluar = new com.toedter.calendar.JDateChooser();
         tketerangan = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
+        ctglkeluar = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,14 +156,14 @@ public class penjualan extends javax.swing.JFrame {
 
         jLabel8.setText("Jumlah (Dus)");
 
-        bcetak.setText("Cetak Surat Jalan");
+        bcetak.setText("Save dan Cetak Surat Jalan");
         bcetak.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bcetakActionPerformed(evt);
             }
         });
 
-        bpesanlagi.setText("Pesanan Berikutnya");
+        bpesanlagi.setText("Save dan Pesanan Berikutnya");
         bpesanlagi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bpesanlagiActionPerformed(evt);
@@ -213,21 +250,21 @@ public class penjualan extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(tjumlah, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ttelepon, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                            .addComponent(ctglkeluar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tketerangan, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bpesanlagi, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bcetak, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(bcetak, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ctglkeluar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                        .addComponent(bcekstok, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(122, 122, 122))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(bmenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(bkeluar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(bcekstok, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(122, 122, 122))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(226, 226, 226)
                 .addComponent(jLabel2)
@@ -257,23 +294,26 @@ public class penjualan extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(tpemesan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addComponent(jLabel4)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(ttelepon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6)
-                    .addComponent(ctglkeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ttelepon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(ctglkeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(tjumlah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -347,43 +387,41 @@ public class penjualan extends javax.swing.JFrame {
             stat2.executeUpdate();
             kosong();
             
-            //coding  cetak surat jalan
-
+            JOptionPane.showMessageDialog(null, "Menyiapkan Surat Jalan, Tekan OK Untuk Melanjutkan");
+           
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Maaf Terjadi Kesalahan");
         }
+        
+        try{
+            //coding  cetak surat jalan
+            String namaFile = "src/laporan/surat_jalan.jasper";
+            Connection conn = new koneksi().GetConnection();
+            HashMap parameter = new HashMap();
+            
+            
+            String tgllap = String.valueOf(fm.format(ctglkeluar.getDate()));
+            String pemesan = tpemesan.getText();
+            String alamat = talamat.getText();
+            
+            //parameter
+            parameter.put("tanggal",tgllap);
+            parameter.put("pemesan",pemesan);
+            parameter.put("alamat",alamat);
+            
+            File report_file = new File(namaFile);
+            JasperReport jasperReport = (JasperReport) JRLoader.loadObject(report_file.getPath());
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,parameter, conn);
+            JasperViewer.viewReport(jasperPrint, false);
+            JasperViewer.setDefaultLookAndFeelDecorated(true);
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Maaf Terjadi Kesalahan Dalam Mencetak"+e);
+        }
+        
     }//GEN-LAST:event_bcetakActionPerformed
 
     private void bpesanlagiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bpesanlagiActionPerformed
-        String tgl = "yyyy-MM-dd";
-        SimpleDateFormat fm = new SimpleDateFormat(tgl);
-        String tanggal = String.valueOf(fm.format(ctglkeluar.getDate()));
-        try{
-            String berat="";
-            if(r30kg.isSelected()) berat="30";
-            else berat="10";
-
-            String sql="insert into penjualan (nama_barang,berat,pemesan,alamat,no_tlp,tgl_keluar,jumlah,keterangan)"
-            +"values"+"('"+cbnamabarang.getSelectedItem().toString()+"','"+berat+"',"
-            + "'"+tpemesan.getText()+"','"+talamat.getText()+"',"        
-            + "'"+ttelepon.getText()+"','"+tanggal+"','"+tjumlah.getText()+"','"+tketerangan.getText()+"' )";
-
-            PreparedStatement stat=conn.prepareStatement(sql);
-            stat.executeUpdate();
-
-            String sql2="UPDATE barang set jumlah=jumlah - '"+tjumlah.getText()+"' "
-                    + "where nama_barang='"+cbnamabarang.getSelectedItem().toString()+"' && berat='"+berat+"'";
-            PreparedStatement stat2= conn.prepareStatement(sql2);
-            stat2.executeUpdate();
-            
-            
-            JOptionPane.showMessageDialog(null, "Silahkan Masukan Pesanan Berikutnya");
-
-            kosong();
-
-        }catch(SQLException e){
-            JOptionPane.showMessageDialog(null, "Maaf Terjadi Kesalahan");
-        }
+        pesanberikutnya();
     }//GEN-LAST:event_bpesanlagiActionPerformed
 
     private void bmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bmenuActionPerformed

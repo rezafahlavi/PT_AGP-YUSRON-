@@ -124,26 +124,26 @@
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="tjumlah" alignment="0" max="32767" attributes="0"/>
                               <Component id="ttelepon" alignment="0" pref="210" max="32767" attributes="0"/>
-                              <Component id="ctglkeluar" alignment="0" max="32767" attributes="0"/>
                               <Component id="tketerangan" alignment="0" max="32767" attributes="0"/>
                               <Component id="bpesanlagi" alignment="0" max="32767" attributes="0"/>
                               <Component id="bcetak" alignment="0" max="32767" attributes="0"/>
+                              <Component id="ctglkeluar" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace pref="16" max="32767" attributes="0"/>
-                          <Component id="bcekstok" min="-2" pref="93" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="bmenu" max="32767" attributes="0"/>
                               <Component id="bkeluar" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="bcekstok" min="-2" pref="93" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -182,28 +182,33 @@
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tpemesan" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="13" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="ttelepon" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                      <Component id="ctglkeluar" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="ctglkeluar" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tjumlah" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -273,7 +278,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="bcetak">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cetak Surat Jalan"/>
+            <Property name="text" type="java.lang.String" value="Save dan Cetak Surat Jalan"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bcetakActionPerformed"/>
@@ -281,7 +286,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="bpesanlagi">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Pesanan Berikutnya"/>
+            <Property name="text" type="java.lang.String" value="Save dan Pesanan Berikutnya"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bpesanlagiActionPerformed"/>
@@ -379,14 +384,14 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="com.toedter.calendar.JDateChooser" name="ctglkeluar">
-        </Component>
         <Component class="javax.swing.JTextField" name="tketerangan">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
             <Property name="text" type="java.lang.String" value="Keterangan"/>
           </Properties>
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="ctglkeluar">
         </Component>
       </SubComponents>
     </Container>

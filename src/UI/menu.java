@@ -38,6 +38,7 @@ public class menu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         blapstokmasuk = new javax.swing.JButton();
         blapstokkeluar = new javax.swing.JButton();
+        blapstokmasuk1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         bbahanmasuk = new javax.swing.JButton();
@@ -139,6 +140,13 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
+        blapstokmasuk1.setText("Laporan Penjualan");
+        blapstokmasuk1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                blapstokmasuk1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -152,7 +160,8 @@ public class menu extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(blapstokmasuk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(blapstokkeluar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(blapstokkeluar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(blapstokmasuk1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(86, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -164,7 +173,9 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(blapstokmasuk)
                 .addGap(34, 34, 34)
                 .addComponent(blapstokkeluar)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(blapstokmasuk1)
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         jPanel5.setBackground(new java.awt.Color(0, 102, 102));
@@ -431,6 +442,11 @@ public class menu extends javax.swing.JFrame {
         new laporan_bahan_keluar().setVisible(true);
     }//GEN-LAST:event_blapbahankeluarActionPerformed
 
+    private void blapstokmasuk1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blapstokmasuk1ActionPerformed
+        this.dispose();
+        new lap_penjualan().setVisible(true);
+    }//GEN-LAST:event_blapstokmasuk1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -473,6 +489,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JButton blapbahanmasuk;
     private javax.swing.JButton blapstokkeluar;
     private javax.swing.JButton blapstokmasuk;
+    private javax.swing.JButton blapstokmasuk1;
     private javax.swing.JButton bstokkeluar;
     private javax.swing.JButton bstokmasuk;
     private javax.swing.JButton jButton10;
