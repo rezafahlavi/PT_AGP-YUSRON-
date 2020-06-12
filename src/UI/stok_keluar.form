@@ -51,14 +51,19 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="66" red="0" type="rgb"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="268" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="217" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -75,80 +80,88 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="24" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Form Stok Keluar"/>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel2">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="66" red="0" type="rgb"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="bsimpan" min="-2" pref="79" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                          <Component id="bbersihkan" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="32" pref="32" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="bkeluar" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="bmenu" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="bcekstok" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Component id="ctglmasuk" min="-2" pref="204" max="-2" attributes="0"/>
-                                      <Component id="tjumlahdus" min="-2" pref="204" max="-2" attributes="0"/>
-                                      <Component id="tukuran" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
+                              <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="bsimpan" min="-2" pref="79" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="bbersihkan" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="32" pref="32" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="bkeluar" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="bmenu" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="bcekstok" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="tcekstok" min="-2" pref="129" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="cbnamabarang" alignment="0" pref="204" max="32767" attributes="0"/>
-                                          <Component id="bautofill" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="r30kg" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="r10kg" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="tidbarang" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
+                              <Component id="ctglmasuk" min="-2" pref="204" max="-2" attributes="0"/>
+                              <Component id="tjumlahdus" min="-2" pref="204" max="-2" attributes="0"/>
+                              <Component id="tukuran" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="tcekstok" min="-2" pref="129" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="cbnamabarang" alignment="0" pref="204" max="32767" attributes="0"/>
+                                  <Component id="bautofill" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="r30kg" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="r10kg" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="tidbarang" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="53" max="32767" attributes="0"/>
+                  <EmptySpace pref="30" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="181" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -168,7 +181,7 @@
                       <Component id="r30kg" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="r10kg" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                  <EmptySpace pref="6" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="bcekstok" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -215,11 +228,23 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Pastikan Data Yang Anda Masukan Benar"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Nama Barang"/>
           </Properties>
         </Component>
@@ -240,6 +265,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Berat (Kg per Dus)"/>
           </Properties>
         </Component>
@@ -269,6 +300,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="ID Barang"/>
           </Properties>
         </Component>
@@ -276,6 +313,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Ukuran"/>
           </Properties>
         </Component>
@@ -283,6 +326,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Tanggal Keluar"/>
           </Properties>
         </Component>
@@ -293,6 +342,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Jumlah (Dus)"/>
           </Properties>
         </Component>
@@ -332,6 +387,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Cek Ketersediaan Stok"/>
           </Properties>
         </Component>
@@ -339,6 +400,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="12" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Stok Tersedia"/>
           </Properties>
         </Component>

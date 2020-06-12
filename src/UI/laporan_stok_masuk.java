@@ -73,16 +73,20 @@ public class laporan_stok_masuk extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Cetak Laporan Stok Masuk");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(237, 237, 237)
                 .addComponent(jLabel1)
-                .addGap(333, 333, 333))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,6 +96,10 @@ public class laporan_stok_masuk extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Tabel Stok Masuk");
 
         tblbarang.setModel(new javax.swing.table.DefaultTableModel(
@@ -135,8 +143,12 @@ public class laporan_stok_masuk extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Dari Tanggal");
 
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Sampai Tanggal");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -157,9 +169,6 @@ public class laporan_stok_masuk extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 744, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(331, 331, 331)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(138, 138, 138)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jcustomprint)
@@ -170,7 +179,10 @@ public class laporan_stok_masuk extends javax.swing.JFrame {
                                 .addGap(75, 75, 75)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(ctglawal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(ctglakhir, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(ctglakhir, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(304, 304, 304)
+                        .addComponent(jLabel2)))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -178,29 +190,27 @@ public class laporan_stok_masuk extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jprintsemua)
-                .addGap(16, 16, 16)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel3))
-                            .addComponent(ctglawal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addComponent(jprintsemua)
+                        .addGap(48, 48, 48)
+                        .addComponent(ctglakhir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(jcustomprint)
+                        .addGap(17, 17, 17)
+                        .addComponent(bmenu)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel4))
+                        .addComponent(bkeluar))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(ctglakhir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jcustomprint)
-                .addGap(17, 17, 17)
-                .addComponent(bmenu)
-                .addGap(18, 18, 18)
-                .addComponent(bkeluar)
-                .addContainerGap(27, Short.MAX_VALUE))
+                        .addGap(62, 62, 62)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ctglawal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel4)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

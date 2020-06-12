@@ -113,6 +113,10 @@ public class penjualan extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Form Pemjualan");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -132,14 +136,26 @@ public class penjualan extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Pastikan Data Yang Anda Masukan Benar");
 
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Pemesan");
 
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Alamat");
 
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("No Telepon");
 
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Tanggal Keluar");
 
         tpemesan.addActionListener(new java.awt.event.ActionListener() {
@@ -154,6 +170,8 @@ public class penjualan extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Jumlah (Dus)");
 
         bcetak.setText("Save dan Cetak Surat Jalan");
@@ -184,10 +202,14 @@ public class penjualan extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Nama Barang");
 
         cbnamabarang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paku 2 inch", "Paku 3 inch", "Paku 4 inch", "Paku 5 inch" }));
 
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Berat (Kg per Dus)");
 
         buttonGroup1.add(r30kg);
@@ -196,8 +218,12 @@ public class penjualan extends javax.swing.JFrame {
         buttonGroup1.add(r10kg);
         r10kg.setText("10 Kg");
 
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Cek Ketersediaan Stok");
 
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Stok Tersedia");
 
         bcekstok.setText("Cek");
@@ -211,6 +237,8 @@ public class penjualan extends javax.swing.JFrame {
         talamat.setRows(5);
         jScrollPane1.setViewportView(talamat);
 
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Keterangan");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

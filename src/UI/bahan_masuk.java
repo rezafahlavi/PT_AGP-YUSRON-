@@ -65,16 +65,20 @@ public class bahan_masuk extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Form Bahan Masuk");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(263, 263, 263)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(205, 205, 205))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,6 +88,10 @@ public class bahan_masuk extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nama Bahan");
 
         buttonGroup1.add(r100kg);
@@ -99,10 +107,16 @@ public class bahan_masuk extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("ID Bahan");
 
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ukuran");
 
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Tanggal Masuk");
 
         ctglmasuk.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
@@ -111,6 +125,8 @@ public class bahan_masuk extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Jumlah (Gulung)");
 
         bsimpan.setText("Simpan");
@@ -141,10 +157,14 @@ public class bahan_masuk extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Pastikan Data Yang Anda Masukan Benar");
 
         cbnamabahan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Wire rod bwg 6", "Wire rod bwg 8", "Wire rod bwg 10", "Wire rod bwg 12" }));
 
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Berat (Kg per Gulung)");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -196,7 +216,7 @@ public class bahan_masuk extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(201, 201, 201)
                         .addComponent(jLabel2)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

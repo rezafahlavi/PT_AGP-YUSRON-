@@ -69,12 +69,20 @@ public class bahan_keluar extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Pastikan Data Yang Anda Masukan Benar");
 
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nama Bahan");
 
         cbnamabahan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Wire rod bwg 6", "Wire rod bwg 8", "Wire rod bwg 10", "Wire rod bwg 12" }));
 
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Berat (Kg per Gulung)");
 
         buttonGroup1.add(r100kg);
@@ -83,6 +91,8 @@ public class bahan_keluar extends javax.swing.JFrame {
         buttonGroup1.add(r50kg);
         r50kg.setText("50 Kg");
 
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Cek Ketersediaan Bahan");
 
         bautofill.setText("ISI OTOMATIS");
@@ -99,12 +109,20 @@ public class bahan_keluar extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Bahan Tersedia");
 
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("ID Bahan");
 
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ukuran");
 
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Tanggal Keluar");
 
         ctglmasuk.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
@@ -113,6 +131,8 @@ public class bahan_keluar extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Jumlah (Gulung)");
 
         bsimpan.setText("Simpan");
@@ -178,7 +198,7 @@ public class bahan_keluar extends javax.swing.JFrame {
                                     .addGap(108, 108, 108)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                            .addComponent(tcekbahan)
+                                            .addComponent(tcekbahan, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                                             .addGap(18, 18, 18)
                                             .addComponent(jLabel10))
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -200,7 +220,7 @@ public class bahan_keluar extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(201, 201, 201)
                         .addComponent(jLabel2)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,7 +242,7 @@ public class bahan_keluar extends javax.swing.JFrame {
                     .addComponent(tcekbahan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bcekstok)
                     .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(bautofill, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,16 +271,20 @@ public class bahan_keluar extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Form Bahan Keluar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(268, 268, 268)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(211, 211, 211))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
