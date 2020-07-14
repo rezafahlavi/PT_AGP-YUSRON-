@@ -127,7 +127,7 @@ WHERE
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{barang_keluar_ukuran}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField pattern="dd/MM/yyyy">
 				<reportElement uuid="785f4b4b-4b56-43f5-b9e3-531487eaf0fe" style="Detail" x="395" y="0" width="79" height="15"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{barang_keluar_tgl_keluar}]]></textFieldExpression>

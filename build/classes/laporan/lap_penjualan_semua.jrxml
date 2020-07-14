@@ -142,7 +142,7 @@ FROM
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{penjualan_no_tlp}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField pattern="dd/MM/yy">
 				<reportElement uuid="43bc5695-65f7-40c7-b173-da4fc413f540" style="Detail" x="396" y="0" width="48" height="15"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{penjualan_tgl_keluar}]]></textFieldExpression>

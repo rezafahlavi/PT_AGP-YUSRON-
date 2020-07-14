@@ -123,7 +123,7 @@ FROM
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{bahan_keluar_ukuran}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField pattern="dd/MM/yyyy">
 				<reportElement uuid="73bfaaeb-7e15-4081-ba7f-46aa8feb5a88" style="Detail" x="372" y="0" width="79" height="15"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{bahan_keluar_tgl_keluar}]]></textFieldExpression>
