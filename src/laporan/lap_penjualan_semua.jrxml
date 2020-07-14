@@ -34,19 +34,14 @@ FROM
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="70" splitType="Stretch">
+		<band height="107" splitType="Stretch">
 			<image>
-				<reportElement uuid="36e1ef31-3366-4770-8183-66dab67d1ae8" x="-20" y="0" width="595" height="64"/>
-				<imageExpression><![CDATA["src/laporan/wood.jpg"]]></imageExpression>
+				<reportElement uuid="36e1ef31-3366-4770-8183-66dab67d1ae8" x="0" y="0" width="555" height="64"/>
+				<imageExpression><![CDATA["src/laporan/logo_pt.jpg"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement uuid="8fce5404-6430-409b-b6c3-1d304280b98c" style="Title" x="0" y="5" width="305" height="33"/>
+				<reportElement uuid="dcab41bf-7b9d-499f-9106-829b630af8f8" style="Title" x="154" y="64" width="242" height="33" forecolor="#000000"/>
 				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[PT Baja Indo Perkasa]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="8dd82105-e67d-496a-83c7-c40aa5028e09" style="SubTitle" x="63" y="39" width="200" height="22" forecolor="#FFFFFF"/>
-				<textElement textAlignment="Right"/>
 				<text><![CDATA[Laporan Penjualan]]></text>
 			</staticText>
 		</band>
@@ -165,39 +160,45 @@ FROM
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch">
+		<band height="123" splitType="Stretch">
 			<line>
 				<reportElement uuid="2c4e3f60-7a7d-4883-9a54-4639ca169644" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
+			<staticText>
+				<reportElement uuid="9df91fc4-766c-4e1d-84b0-02d119f5503c" style="SubTitle" x="403" y="32" width="64" height="16" forecolor="#000000" backcolor="#000000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Manager]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9df91fc4-766c-4e1d-84b0-02d119f5503c" style="SubTitle" x="393" y="100" width="98" height="16" forecolor="#000000" backcolor="#000000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(  Rico Agung  )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9df91fc4-766c-4e1d-84b0-02d119f5503c" style="SubTitle" x="346" y="16" width="57" height="16" forecolor="#000000" backcolor="#000000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="42ae148c-0f94-4fd1-a2c5-2f8c72402a90" style="Column header" x="413" y="16" width="142" height="16" forecolor="#000000"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE dd MMMMM yyyy",new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+			</textField>
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="20" splitType="Stretch">
-			<textField>
-				<reportElement uuid="149b9001-f6c0-47b2-8aec-79cd35c1af5d" style="Column header" x="433" y="0" width="80" height="20"/>
-				<textElement textAlignment="Right">
-					<font size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
-			</textField>
-			<textField evaluationTime="Report">
-				<reportElement uuid="b4516f27-a074-4199-a1a1-e1879cf0ce62" style="Column header" x="513" y="0" width="40" height="20"/>
-				<textElement>
-					<font size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
-			</textField>
-			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement uuid="d4b61d4e-1aee-40a3-bfc3-03ffecd4fc27" style="Column header" x="0" y="0" width="197" height="20"/>
-				<textElement>
-					<font size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="20" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
 		<band splitType="Stretch"/>
