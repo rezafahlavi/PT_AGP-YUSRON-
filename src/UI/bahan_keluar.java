@@ -469,6 +469,7 @@ public class bahan_keluar extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Data BERHASIL disimpan");
 
             kosong();
+            datatable();
 
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Data GAGAL disimpan");

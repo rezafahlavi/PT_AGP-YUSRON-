@@ -428,6 +428,7 @@ public class bahan_masuk extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Data BERHASIL disimpan");
 
             kosong();
+            datatable();
 
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Data GAGAL disimpan");
