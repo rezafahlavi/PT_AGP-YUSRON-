@@ -13,25 +13,47 @@ public class bahan_keluar extends javax.swing.JFrame {
     
     public bahan_keluar() {
         initComponents();
-        r100kg.setSelected(true);
         datatable();
+        tampilpilih();
     }
 
     protected void aktif(){
-        tukuran.setEnabled(true);
-        tjumlahbahan.setEnabled(true);
+        bsimpan.setEnabled(true);
+        tidedit.setEnabled(true);
     }
             
-     protected void kosong(){
-         cbnamabahan.setSelectedIndex(0);
-         r100kg.setSelected(true);
+     protected void kosong(){         
          tukuran.setText("");
-         tidbahan.setText("");
+         cbnamabahan.setSelectedItem(0);
+         tberat.setText("");
          tjumlahbahan.setText("");
+         tidedit.setText("");
+         tidbahan.setText("");
      }
      
+     private void tampilpilih() {
+        try {
+            Connection c = koneksi.GetConnection();
+            Statement s = c.createStatement();
+
+            String sql = "SELECT nama_bahan FROM bahan WHERE jumlah !='0'";
+            ResultSet r = s.executeQuery(sql);
+
+            while (r.next()) {
+                cbnamabahan.addItem(r.getString("nama_bahan"));
+            }
+
+            r.last();
+            int jumlahdata = r.getRow();
+            r.first();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+    }
+     
      protected void datatable(){
-         Object[] Baris ={"ID Bahan Keluar","ID Bahan","Nama Bahan","Berat (Kg)","Ukuran","Tanggal","Jumlah (Gulung)"};
+         Object[] Baris ={"ID Keluar","ID Bahan","Nama Bahan","Jenis","Tipe Ukuran","Tanggal","Jumlah(Pcs/Meter)"};
          tableModel = new DefaultTableModel (null, Baris);
          tblstok.setModel(tableModel);
          String sql = "select * from bahan_keluar";
@@ -70,10 +92,7 @@ public class bahan_keluar extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         cbnamabahan = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        r100kg = new javax.swing.JRadioButton();
-        r50kg = new javax.swing.JRadioButton();
         jLabel9 = new javax.swing.JLabel();
-        bautofill = new javax.swing.JButton();
         bcekstok = new javax.swing.JButton();
         tcekbahan = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -95,8 +114,10 @@ public class bahan_keluar extends javax.swing.JFrame {
         tidedit = new javax.swing.JTextField();
         bedit = new javax.swing.JButton();
         bhapus = new javax.swing.JButton();
+        tberat = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,28 +131,20 @@ public class bahan_keluar extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nama Bahan");
 
-        cbnamabahan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Wire rod bwg 6", "Wire rod bwg 8", "Wire rod bwg 10", "Wire rod bwg 12" }));
+        cbnamabahan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Bahan" }));
+        cbnamabahan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbnamabahanActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Berat (Kg per Gulung)");
-
-        buttonGroup1.add(r100kg);
-        r100kg.setText("100 Kg");
-
-        buttonGroup1.add(r50kg);
-        r50kg.setText("50 Kg");
+        jLabel5.setText("Jenis Bahan");
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Cek Ketersediaan Bahan");
-
-        bautofill.setText("ISI OTOMATIS");
-        bautofill.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bautofillActionPerformed(evt);
-            }
-        });
 
         bcekstok.setText("Cek");
         bcekstok.addActionListener(new java.awt.event.ActionListener() {
@@ -150,7 +163,7 @@ public class bahan_keluar extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Ukuran");
+        jLabel4.setText("Tipe / Ukuran");
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -164,7 +177,7 @@ public class bahan_keluar extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Jumlah (Gulung)");
+        jLabel7.setText("Jumlah (Pcs/Meter)");
 
         bsimpan.setText("Simpan");
         bsimpan.addActionListener(new java.awt.event.ActionListener() {
@@ -205,6 +218,11 @@ public class bahan_keluar extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7"
             }
         ));
+        tblstok.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblstokMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblstok);
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -235,9 +253,17 @@ public class bahan_keluar extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(259, 259, 259))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(187, 187, 187)
+                        .addComponent(tidbahan, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
@@ -246,32 +272,25 @@ public class bahan_keluar extends javax.swing.JFrame {
                             .addComponent(jLabel9)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel5)
-                                        .addComponent(jLabel8)
-                                        .addComponent(jLabel3))
-                                    .addGap(108, 108, 108)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                            .addComponent(tcekbahan, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jLabel10))
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(cbnamabahan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(r100kg)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                                                .addComponent(r50kg)
-                                                .addGap(39, 39, 39)))))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addGap(213, 213, 213)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(tukuran, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(tjumlahbahan)
-                                            .addComponent(ctglmasuk, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE))
-                                        .addComponent(tidbahan, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(bautofill, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(ctglmasuk, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE))))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel5))
+                                    .addGap(168, 168, 168)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(tberat, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                                .addComponent(tcekbahan)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabel10))
+                                            .addComponent(cbnamabahan, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                         .addGap(35, 35, 35)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(bsimpan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -291,13 +310,12 @@ public class bahan_keluar extends javax.swing.JFrame {
                         .addGap(57, 57, 57)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bkeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bmenu)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 695, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(59, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(259, 259, 259))
+                            .addComponent(bmenu))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,28 +326,25 @@ public class bahan_keluar extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(cbnamabahan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(r100kg)
-                    .addComponent(r50kg))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(tcekbahan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bcekstok)
                     .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(tidbahan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(tberat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(bautofill, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel8)
-                                    .addComponent(tidbahan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(17, 17, 17)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(tukuran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel4)
@@ -365,21 +380,31 @@ public class bahan_keluar extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Form Bahan Keluar");
 
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("PT AGP");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(295, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(288, 288, 288))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(348, 348, 348)
+                .addComponent(jLabel12)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel12)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -406,31 +431,9 @@ public class bahan_keluar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bautofillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bautofillActionPerformed
-        String bahan = cbnamabahan.getSelectedItem().toString();
-        String berat="";
-        if(r100kg.isSelected()) berat="100";
-        else berat="50";
-        String sql = "select id_bahan, ukuran from bahan where nama_bahan='"+bahan+"' && berat='"+berat+"'";
-        try{
-
-            java.sql.Statement stat=conn.createStatement();
-            ResultSet hasil = stat.executeQuery(sql);
-            while(hasil.next()){
-                tidbahan.setText(hasil.getString("id_bahan"));
-                tukuran.setText(hasil.getString("ukuran"));
-            }
-        }catch(Exception e){
-
-        }
-    }//GEN-LAST:event_bautofillActionPerformed
-
     private void bcekstokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcekstokActionPerformed
         String bahan = cbnamabahan.getSelectedItem().toString();
-        String berat="";
-        if(r100kg.isSelected()) berat="100";
-        else berat="50";
-        String sql = "select jumlah from bahan where nama_bahan='"+bahan+"' && berat='"+berat+"'";
+        String sql = "select jumlah from bahan where nama_bahan='"+bahan+"'";
         try{
 
             java.sql.Statement stat=conn.createStatement();
@@ -452,12 +455,8 @@ public class bahan_keluar extends javax.swing.JFrame {
         SimpleDateFormat fm = new SimpleDateFormat(tgl);
         String tanggal = String.valueOf(fm.format(ctglmasuk.getDate()));
         try{
-            String berat="";
-            if(r100kg.isSelected()) berat="100";
-            else berat="50";
-
             String sql="insert into bahan_keluar (id_bahan,nama_bahan,berat,ukuran,tgl_keluar,jumlah)"
-            +"values"+"('"+tidbahan.getText()+"','"+cbnamabahan.getSelectedItem().toString()+"','"+berat+"',"
+            +"values"+"('"+tidbahan.getText()+"','"+cbnamabahan.getSelectedItem().toString()+"','"+tberat.getText()+"',"
             + "'"+tukuran.getText()+"','"+tanggal+"','"+tjumlahbahan.getText()+"' )";
 
             PreparedStatement stat=conn.prepareStatement(sql);
@@ -498,12 +497,8 @@ public class bahan_keluar extends javax.swing.JFrame {
         SimpleDateFormat fm = new SimpleDateFormat(tgl);
         String tanggal = String.valueOf(fm.format(ctglmasuk.getDate()));
         try{
-            String berat="";
-            if(r100kg.isSelected()) berat="100";
-            else berat="50";
-
             String sql="UPDATE bahan_keluar set id_bahan='"+tidbahan.getText()+"',nama_bahan='"+cbnamabahan.getSelectedItem().toString()+"',"
-            + "berat='"+berat+"',ukuran='"+tukuran.getText()+"',tgl_keluar='"+tanggal+"',"
+            + "berat='"+tberat.getText()+"',ukuran='"+tukuran.getText()+"',tgl_keluar='"+tanggal+"',"
             + "jumlah='"+tjumlahbahan.getText()+"' where id_bahan_keluar='"+tidedit.getText()+"'";
             PreparedStatement stat=conn.prepareStatement(sql);
             stat.executeUpdate();
@@ -512,9 +507,10 @@ public class bahan_keluar extends javax.swing.JFrame {
 
             kosong();
             datatable();
+            aktif();
 
         }catch(SQLException e){
-            JOptionPane.showMessageDialog(null, "Data GAGAL diedit");
+            JOptionPane.showMessageDialog(null, "Data GAGAL diedit"+e);
         }
     }//GEN-LAST:event_beditActionPerformed
 
@@ -530,11 +526,66 @@ public class bahan_keluar extends javax.swing.JFrame {
 
             kosong();
             datatable();
+            aktif();
 
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Data GAGAL dihapus");
         }
     }//GEN-LAST:event_bhapusActionPerformed
+
+    private void tblstokMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblstokMouseClicked
+        bsimpan.setEnabled(false);
+        bedit.setEnabled(true);
+        bhapus.setEnabled(true);
+        tidedit.setEnabled(false);
+        int i = tblstok.getSelectedRow();
+        if (i == -1) {
+            return;
+        }
+        String id = (String) tableModel.getValueAt(i, 0);
+        tidedit.setText(id);
+
+        String idbahan = (String) tableModel.getValueAt(i, 1);
+        tidbahan.setText(idbahan);
+        
+        String nama = (String) tableModel.getValueAt(i, 2);
+        cbnamabahan.setSelectedItem(nama);
+
+        String berat = (String) tableModel.getValueAt(i, 3);
+        tberat.setText(berat);       
+
+        String ukuran = (String) tableModel.getValueAt(i, 4);
+        tukuran.setText(ukuran);
+
+        //String tgl = (String) tableModel.getValueAt(i, 5);
+        //tgl.setText(tgl);
+        
+        String jumlah = (String) tableModel.getValueAt(i, 6);
+        tjumlahbahan.setText(jumlah);
+    }//GEN-LAST:event_tblstokMouseClicked
+
+    private void cbnamabahanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbnamabahanActionPerformed
+        if (cbnamabahan.getSelectedItem().equals("Pilih Bahan")){
+            kosong();
+        }else{
+            try {
+                Connection c = koneksi.GetConnection();
+                Statement s = c.createStatement();
+
+                String sql = "SELECT id_bahan,berat,ukuran FROM bahan WHERE nama_bahan ='" + cbnamabahan.getSelectedItem() + "'";
+                ResultSet r = s.executeQuery(sql);
+
+                while (r.next()) {
+                    tidbahan.setText(r.getString("id_bahan"));
+                    tberat.setText(r.getString("berat"));
+                    tukuran.setText(r.getString("ukuran"));
+                }
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+    }//GEN-LAST:event_cbnamabahanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -572,7 +623,6 @@ public class bahan_keluar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bautofill;
     private javax.swing.JButton bbersihkan;
     private javax.swing.JButton bcekstok;
     private javax.swing.JButton bedit;
@@ -586,6 +636,7 @@ public class bahan_keluar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -597,8 +648,7 @@ public class bahan_keluar extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JRadioButton r100kg;
-    private javax.swing.JRadioButton r50kg;
+    private javax.swing.JTextField tberat;
     private javax.swing.JTable tblstok;
     private javax.swing.JTextField tcekbahan;
     private javax.swing.JTextField tidbahan;
