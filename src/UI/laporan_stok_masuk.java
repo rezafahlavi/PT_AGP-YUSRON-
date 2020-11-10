@@ -23,7 +23,7 @@ public class laporan_stok_masuk extends javax.swing.JFrame {
         datatable();
     }
      protected void datatable(){
-         Object[] Baris ={"ID Stok Masuk","ID Barang","Nama Barang","Berat (Kg)","Ukuran","Tanggal","Jumlah (Dus)"};
+         Object[] Baris ={"ID Masuk","ID Barang","Nama Barang","Jenis","Tipe Ukuran","Tanggal","Jumlah(Pcs/Meter)"};
          tableModel = new DefaultTableModel (null, Baris);
          tblbarang.setModel(tableModel);
          String sql = "select * from barang_masuk";

@@ -23,7 +23,7 @@ public class lap_penjualan extends javax.swing.JFrame {
         datatable();
     }
      protected void datatable(){
-         Object[] Baris ={"ID Penjualan","Nama Barang","Berat(Kg)","Pemesan","Alamat","Telepon","Tanggal","Jumlah(Dus)","Keterangan"};
+         Object[] Baris ={"ID Penjualan","Nama Barang","Jenis Bahan","Pemesan","Alamat","Telepon","Tanggal","Jumlah","Satuan","Sub Total"};
          tableModel = new DefaultTableModel (null, Baris);
          tbljual.setModel(tableModel);
          String sql = "select * from penjualan";
@@ -40,8 +40,9 @@ public class lap_penjualan extends javax.swing.JFrame {
              String g = hasil.getString("tgl_keluar");
              String h = hasil.getString("jumlah");
              String i = hasil.getString("keterangan");
+             String j = hasil.getString("sub_total");
              
-             String[] data={a,b,c,d,e,f,g,h,i};
+             String[] data={a,b,c,d,e,f,g,h,i,j};
              tableModel.addRow(data);
             }   
          }catch(Exception e){
@@ -106,13 +107,13 @@ public class lap_penjualan extends javax.swing.JFrame {
 
         tbljual.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9"
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10"
             }
         ));
         jScrollPane1.setViewportView(tbljual);

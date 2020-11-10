@@ -22,7 +22,7 @@ public class laporan_bahan_keluar extends javax.swing.JFrame {
         datatable();
     }
      protected void datatable(){
-         Object[] Baris ={"ID Bahan Keluar","ID Bahan","Nama Bahan","Berat (Kg)","Ukuran","Tanggal","Jumlah (Gulung)"};
+         Object[] Baris ={"ID Keluar","ID Bahan","Nama Bahan","Jenis","Tipe Ukuran","Tanggal","Jumlah(Pcs/Meter)"};
          tableModel = new DefaultTableModel (null, Baris);
          tblbahan.setModel(tableModel);
          String sql = "select * from bahan_keluar";

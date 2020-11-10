@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="da3a8728-9d72-4004-97df-80e00450178f">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="78"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="alamat" class="java.lang.String"/>
 	<parameter name="pemesan" class="java.lang.String"/>
 	<parameter name="tanggal" class="java.lang.String"/>
@@ -30,21 +30,21 @@ WHERE
 	<title>
 		<band height="79" splitType="Stretch">
 			<staticText>
-				<reportElement uuid="0cf8808c-fba6-4a98-b6b0-642a63352d67" x="0" y="28" width="262" height="38"/>
+				<reportElement uuid="0cf8808c-fba6-4a98-b6b0-642a63352d67" x="202" y="30" width="336" height="36"/>
 				<textElement>
 					<font size="11" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Area Pergudangan Bizpark 2 Jalan Raya Milling Km 1,1 No 10 Cakung Jakarta Timur 13940]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="02877861-5036-40dd-836c-a9e25da15b15" x="336" y="0" width="183" height="28"/>
+				<reportElement uuid="02877861-5036-40dd-836c-a9e25da15b15" x="200" y="0" width="176" height="28"/>
 				<textElement>
 					<font size="18" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Kuitansi]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="69d6d830-a274-4607-9585-2394138b0e34" x="336" y="28" width="47" height="15"/>
+				<reportElement uuid="69d6d830-a274-4607-9585-2394138b0e34" x="408" y="6" width="47" height="15"/>
 				<textElement>
 					<font size="11"/>
 				</textElement>
@@ -57,18 +57,18 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement uuid="ad4d4b19-2533-4a45-a094-d3fa9c0e4ff3" positionType="FixRelativeToBottom" x="297" y="0" width="1" height="65"/>
+				<reportElement uuid="ad4d4b19-2533-4a45-a094-d3fa9c0e4ff3" positionType="FixRelativeToBottom" x="193" y="6" width="1" height="59"/>
 			</line>
 			<textField>
-				<reportElement uuid="5a795f82-65f7-4cfa-8065-11b82925e098" x="383" y="28" width="100" height="15"/>
+				<reportElement uuid="5a795f82-65f7-4cfa-8065-11b82925e098" x="455" y="6" width="100" height="15"/>
 				<textElement>
 					<font size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{tanggal}]]></textFieldExpression>
 			</textField>
 			<image>
-				<reportElement uuid="e73177d2-a213-4b2c-8eec-4a3c7ca1c2f7" x="0" y="0" width="298" height="28"/>
-				<imageExpression><![CDATA["C:\\Users\\unix\\Documents\\REZA\\sk_RIP_si\\Inventori\\src\\laporan\\logo_pt.jpg"]]></imageExpression>
+				<reportElement uuid="e73177d2-a213-4b2c-8eec-4a3c7ca1c2f7" x="0" y="0" width="548" height="63"/>
+				<imageExpression><![CDATA["C:\\Users\\unix\\Documents\\REZA\\sk_RIP_si\\Inventori\\src\\laporan\\logo_agp_crop.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>

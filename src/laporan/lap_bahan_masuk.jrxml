@@ -36,8 +36,8 @@ WHERE
 	<title>
 		<band height="104" splitType="Stretch">
 			<image>
-				<reportElement uuid="552163d6-e70d-4504-907d-8d625bcc90ea" x="0" y="0" width="555" height="64"/>
-				<imageExpression><![CDATA["src/laporan/logo_pt.jpg"]]></imageExpression>
+				<reportElement uuid="552163d6-e70d-4504-907d-8d625bcc90ea" x="182" y="0" width="373" height="64"/>
+				<imageExpression><![CDATA["src/laporan/logo_agp_crop.png"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement uuid="dcab41bf-7b9d-499f-9106-829b630af8f8" style="Title" x="124" y="64" width="282" height="33" forecolor="#000000"/>
@@ -75,12 +75,12 @@ WHERE
 			<staticText>
 				<reportElement uuid="38b7c0d2-fff0-40e9-8111-fea298fd6866" style="Column header" x="237" y="19" width="60" height="15"/>
 				<textElement/>
-				<text><![CDATA[Berat (Kg)]]></text>
+				<text><![CDATA[Jenis]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="eda62224-b4b9-4b07-b690-e6b3c957fc36" style="Column header" x="298" y="19" width="79" height="15"/>
 				<textElement/>
-				<text><![CDATA[Ukuran]]></text>
+				<text><![CDATA[Tipe]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="edabb1ab-1460-4d12-ba15-07c97e365e36" style="Column header" x="377" y="19" width="79" height="15"/>
@@ -88,9 +88,9 @@ WHERE
 				<text><![CDATA[Tanggal]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="3a8f60c7-821e-416b-aafd-433de1e78ebc" style="Column header" x="456" y="19" width="97" height="15"/>
+				<reportElement uuid="3a8f60c7-821e-416b-aafd-433de1e78ebc" style="Column header" x="456" y="19" width="116" height="15"/>
 				<textElement/>
-				<text><![CDATA[Jumlah (Gulung)]]></text>
+				<text><![CDATA[Jumlah(Pcs/Meter)]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -148,20 +148,6 @@ WHERE
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement uuid="9df91fc4-766c-4e1d-84b0-02d119f5503c" style="SubTitle" x="403" y="31" width="64" height="16" forecolor="#000000" backcolor="#000000"/>
-				<textElement textAlignment="Right">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Manager]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="9df91fc4-766c-4e1d-84b0-02d119f5503c" style="SubTitle" x="393" y="99" width="98" height="16" forecolor="#000000" backcolor="#000000"/>
-				<textElement textAlignment="Right">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[(  Rico Agung  )]]></text>
-			</staticText>
-			<staticText>
 				<reportElement uuid="9df91fc4-766c-4e1d-84b0-02d119f5503c" style="SubTitle" x="346" y="15" width="57" height="16" forecolor="#000000" backcolor="#000000"/>
 				<textElement textAlignment="Right">
 					<font size="12" isBold="true"/>
@@ -175,6 +161,20 @@ WHERE
 				</textElement>
 				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE dd MMMMM yyyy",new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement uuid="9df91fc4-766c-4e1d-84b0-02d119f5503c" style="SubTitle" x="431" y="99" width="57" height="16" forecolor="#000000" backcolor="#000000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(  Marita )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9df91fc4-766c-4e1d-84b0-02d119f5503c" style="SubTitle" x="390" y="31" width="133" height="16" forecolor="#000000" backcolor="#000000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S.E General Manager]]></text>
+			</staticText>
 		</band>
 	</columnFooter>
 	<pageFooter>
