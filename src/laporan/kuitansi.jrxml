@@ -68,7 +68,7 @@ WHERE
 			</textField>
 			<image>
 				<reportElement uuid="e73177d2-a213-4b2c-8eec-4a3c7ca1c2f7" x="0" y="0" width="548" height="63"/>
-				<imageExpression><![CDATA["C:\\Users\\unix\\Documents\\REZA\\sk_RIP_si\\Inventori\\src\\laporan\\logo_agp_crop.png"]]></imageExpression>
+				<imageExpression><![CDATA["src/laporan/logo_agp_crop.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
