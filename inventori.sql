@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2020 at 12:35 PM
+-- Generation Time: Jan 11, 2021 at 08:03 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -111,9 +111,9 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id_barang`, `nama_barang`, `ukuran`, `berat`, `jumlah`, `harga`) VALUES
-(9, 'Stiker Custom A4', 'A4', 'Vinyl', 50, 2000),
-(10, 'Cutting Stiker Merah', 'L 126', 'Vinyl', 55, 5000),
-(12, 'Stiker Pertamina', '8x3', 'Vinyl', 60, 1000);
+(9, 'Stiker Custom A4', 'A4', 'Vinyl', 20, 2000),
+(10, 'Cutting Stiker Merah', 'L 126', 'Vinyl', 25, 5000),
+(12, 'Stiker Pertamina', '8x3', 'Vinyl', 10, 1000);
 
 -- --------------------------------------------------------
 
@@ -187,11 +187,15 @@ CREATE TABLE `penjualan` (
 --
 
 INSERT INTO `penjualan` (`id_penjualan`, `nama_barang`, `berat`, `pemesan`, `alamat`, `no_tlp`, `tgl_keluar`, `jumlah`, `keterangan`, `sub_total`) VALUES
-(17, 'Stiker Custom A4', 'Vinyl', 'Afif', 'Jl Peternakan 3 No 20', '085623452355', '2020-11-03', 10, '2000', 20000),
 (22, 'Stiker Pertamina', 'Vinyl', 'Didi', 'Jakarta', '021998787', '2020-11-02', 5, '1000', 5000),
 (24, 'Stiker Pertamina', 'Vinyl', 'Jujun', 'Depok', '08572121345', '2020-11-03', 5, '1000', 5000),
 (25, 'Stiker Pertamina', 'Vinyl', 'Fitri', 'Jakarta', '02187653456', '2020-11-03', 10, '1000', 10000),
-(26, 'Cutting Stiker Merah', 'Vinyl', 'Fitri', 'Jakarta', '02187653456', '2020-11-03', 5, '5000', 25000);
+(26, 'Cutting Stiker Merah', 'Vinyl', 'Fitri', 'Jakarta', '02187653456', '2020-11-03', 5, '5000', 25000),
+(31, 'Stiker Custom A4', 'Vinyl', 'Dion', 'Bogor', '085748294289', '2020-11-04', 10, '2000', 20000),
+(32, 'Cutting Stiker Merah', 'Vinyl', 'Dion', 'Bogor', '085748294289', '2020-11-04', 5, '5000', 25000),
+(34, 'Stiker Custom A4', 'Vinyl', 'Aldi', 'Depok', '085733423342', '2021-01-01', 10, '2000', 20000),
+(48, 'Cutting Stiker Merah', 'Vinyl', 'Aldo', 'Depok', '085734345656', '2020-12-10', 10, '5000', 50000),
+(49, 'Stiker Pertamina', 'Vinyl', 'Darius', 'Depok', '085734435555', '2020-12-07', 10, '1000', 10000);
 
 -- --------------------------------------------------------
 
@@ -308,7 +312,7 @@ ALTER TABLE `barang_masuk`
 -- AUTO_INCREMENT for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `id_penjualan` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_penjualan` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `user`
