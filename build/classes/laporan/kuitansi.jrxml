@@ -227,7 +227,7 @@ WHERE
 				<textFieldExpression><![CDATA[$P{tot}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="3c04389c-bdf8-415b-972c-b145115cc8df" x="382" y="78" width="44" height="20"/>
+				<reportElement uuid="3c04389c-bdf8-415b-972c-b145115cc8df" x="351" y="78" width="44" height="20"/>
 				<textElement>
 					<font fontName="Arial" size="11"/>
 				</textElement>
@@ -240,12 +240,12 @@ WHERE
 				</textElement>
 				<text><![CDATA[Admin]]></text>
 			</staticText>
-			<textField pattern="dd MMMMM yyyy">
-				<reportElement uuid="22c1840b-78fe-4b74-ae7e-4d00688a2f3e" x="426" y="78" width="129" height="20"/>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="22c1840b-78fe-4b74-ae7e-4d00688a2f3e" x="395" y="78" width="160" height="20"/>
 				<textElement>
 					<font fontName="Arial" size="11"/>
 				</textElement>
-				<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMMMM yyyy",new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEEE dd MMMMM yyyy",new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
 			</textField>
 		</band>
 	</columnFooter>
