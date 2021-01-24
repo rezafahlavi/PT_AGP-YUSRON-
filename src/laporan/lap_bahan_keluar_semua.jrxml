@@ -32,12 +32,30 @@ FROM
 	<title>
 		<band height="99" splitType="Stretch">
 			<image>
-				<reportElement uuid="87513c84-b658-4982-8ad1-1e1dcb13434e" x="166" y="0" width="389" height="64"/>
+				<reportElement uuid="e73177d2-a213-4b2c-8eec-4a3c7ca1c2f7" x="10" y="10" width="548" height="63"/>
 				<imageExpression><![CDATA["src/laporan/logo_agp_crop.png"]]></imageExpression>
 			</image>
+			<line>
+				<reportElement uuid="8e62ea81-3026-4f90-b395-b5856ef9aa6c" x="10" y="75" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="ad4d4b19-2533-4a45-a094-d3fa9c0e4ff3" positionType="FixRelativeToBottom" x="203" y="16" width="1" height="59"/>
+			</line>
 			<staticText>
-				<reportElement uuid="dcab41bf-7b9d-499f-9106-829b630af8f8" style="Title" x="130" y="64" width="282" height="33" forecolor="#000000"/>
-				<textElement verticalAlignment="Middle"/>
+				<reportElement uuid="0cf8808c-fba6-4a98-b6b0-642a63352d67" x="212" y="40" width="336" height="36"/>
+				<textElement>
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Area Pergudangan Bizpark 2 Jalan Raya Milling Km 1,1 No 10 Cakung Jakarta Timur 13940]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="02877861-5036-40dd-836c-a9e25da15b15" x="210" y="10" width="309" height="28"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
 				<text><![CDATA[Laporan Bahan Keluar]]></text>
 			</staticText>
 		</band>

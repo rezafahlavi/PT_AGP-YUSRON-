@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e46debe2-09c7-4bac-8b70-92c0c2027983">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="846ca39b-9d2c-41d9-a65a-3733b56da924">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -7,8 +7,8 @@
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
 	<style name="Detail" fontName="Arial" fontSize="12"/>
-	<parameter name="kondisi1" class="java.lang.String"/>
 	<parameter name="kondisi2" class="java.lang.String"/>
+	<parameter name="kondisi1" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT
      bahan_keluar.`id_bahan_keluar` AS bahan_keluar_id_bahan_keluar,
@@ -34,14 +34,32 @@ WHERE
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="99" splitType="Stretch">
+		<band height="84" splitType="Stretch">
 			<image>
-				<reportElement uuid="5cf369aa-7e65-4859-b0a4-1a955da34a73" x="173" y="0" width="380" height="64"/>
+				<reportElement uuid="e73177d2-a213-4b2c-8eec-4a3c7ca1c2f7" x="10" y="10" width="548" height="63"/>
 				<imageExpression><![CDATA["src/laporan/logo_agp_crop.png"]]></imageExpression>
 			</image>
+			<line>
+				<reportElement uuid="8e62ea81-3026-4f90-b395-b5856ef9aa6c" x="10" y="75" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="ad4d4b19-2533-4a45-a094-d3fa9c0e4ff3" positionType="FixRelativeToBottom" x="203" y="16" width="1" height="59"/>
+			</line>
 			<staticText>
-				<reportElement uuid="dcab41bf-7b9d-499f-9106-829b630af8f8" style="Title" x="137" y="64" width="282" height="33" forecolor="#000000"/>
-				<textElement verticalAlignment="Middle"/>
+				<reportElement uuid="0cf8808c-fba6-4a98-b6b0-642a63352d67" x="212" y="40" width="336" height="36"/>
+				<textElement>
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Area Pergudangan Bizpark 2 Jalan Raya Milling Km 1,1 No 10 Cakung Jakarta Timur 13940]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="02877861-5036-40dd-836c-a9e25da15b15" x="210" y="10" width="338" height="28"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
 				<text><![CDATA[Laporan Bahan Keluar]]></text>
 			</staticText>
 		</band>
@@ -52,129 +70,129 @@ WHERE
 	<columnHeader>
 		<band height="36" splitType="Stretch">
 			<line>
-				<reportElement uuid="89c9ffc3-b1ea-426a-b30b-722da2e324db" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1"/>
+				<reportElement uuid="e20b0bf9-70ad-4277-92f9-2cc381e798fb" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement uuid="0ec38c46-832b-40f3-a0d7-189a63995b0e" style="Column header" x="0" y="19" width="41" height="15"/>
+				<reportElement uuid="c39008b4-cc8e-4e5b-8b2d-3d6d14dd6b7f" style="Column header" x="0" y="19" width="79" height="15"/>
 				<textElement/>
 				<text><![CDATA[ID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="ebb58899-7597-40f9-adfc-6c35ba76614a" style="Column header" x="42" y="19" width="79" height="15"/>
+				<reportElement uuid="7f1988ef-0568-4b58-be81-0c36454cb45f" style="Column header" x="79" y="19" width="79" height="15"/>
 				<textElement/>
 				<text><![CDATA[ID Bahan]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="3c1b2c4c-4c4f-47c7-8e0f-4f8cbac9d22f" style="Column header" x="121" y="19" width="116" height="15"/>
+				<reportElement uuid="f35b3863-c706-48aa-b49b-f1f42b972bdc" style="Column header" x="158" y="19" width="79" height="15"/>
 				<textElement/>
 				<text><![CDATA[Nama Bahan]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="8217da86-cf0e-4523-9d8c-43b86d17ac48" style="Column header" x="237" y="19" width="60" height="15"/>
+				<reportElement uuid="c38b2ff9-966d-4592-8b4c-dcd36efcdf5b" style="Column header" x="237" y="19" width="79" height="15"/>
 				<textElement/>
 				<text><![CDATA[Jenis]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="35a7affc-d6d5-491f-a20d-4b624f4414cd" style="Column header" x="301" y="19" width="69" height="15"/>
+				<reportElement uuid="e56829de-ee49-4536-8cec-75e6b62d38c8" style="Column header" x="316" y="19" width="79" height="15"/>
 				<textElement/>
 				<text><![CDATA[Tipe]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="4b2a80d2-fbcb-4a45-ab42-435ef928ba7f" style="Column header" x="370" y="19" width="79" height="15"/>
+				<reportElement uuid="c5f3403b-a6ac-4bfc-a9e4-0fe41c1cb39f" style="Column header" x="395" y="19" width="79" height="15"/>
 				<textElement/>
 				<text><![CDATA[Tanggal]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="b975034f-ac81-43f7-ab2b-581dc11c096d" style="Column header" x="449" y="19" width="121" height="15"/>
+				<reportElement uuid="804285f8-49f2-4f12-aff1-3532b6143f30" style="Column header" x="474" y="19" width="79" height="15"/>
 				<textElement/>
-				<text><![CDATA[Jumlah (Pcs/Meter)]]></text>
+				<text><![CDATA[Jumlah(Pcs/Meter)]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="16" splitType="Stretch">
 			<line>
-				<reportElement uuid="a875cf79-3690-475f-b4b4-d3b30105c325" positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1"/>
+				<reportElement uuid="b3d77db9-522b-448f-8fbc-352743f333a0" positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement uuid="72849195-76d4-4985-8f5c-888d82d4f8f2" style="Detail" x="0" y="0" width="41" height="15"/>
+				<reportElement uuid="b60477d6-05fa-47b8-a133-a1736fc82870" style="Detail" x="0" y="0" width="79" height="15"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{bahan_keluar_id_bahan_keluar}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="e724cd93-911c-4524-afad-b7c06622664a" style="Detail" x="42" y="0" width="79" height="15"/>
+				<reportElement uuid="70da73ae-7b3d-4f61-9ff7-7aede1a301e9" style="Detail" x="79" y="0" width="79" height="15"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{bahan_keluar_id_bahan}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="ff4293b7-aaaa-4686-9424-46aaa629395b" style="Detail" x="121" y="0" width="116" height="15"/>
+				<reportElement uuid="862d104a-b2ba-47cd-a514-8e905ccf7aec" style="Detail" x="158" y="0" width="79" height="15"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{bahan_keluar_nama_bahan}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="2b727ad6-7f16-4ae8-83af-bf81064e2976" style="Detail" x="237" y="0" width="60" height="15"/>
+				<reportElement uuid="b73fa4a2-667f-49a5-bcc6-611942b9d0af" style="Detail" x="237" y="0" width="79" height="15"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{bahan_keluar_berat}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="979dedf1-d1a5-4beb-bfcd-f57544cde774" style="Detail" x="301" y="0" width="69" height="15"/>
+				<reportElement uuid="b4fa5218-ee1d-4b26-b6e3-d64dc0eb2160" style="Detail" x="316" y="0" width="79" height="15"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{bahan_keluar_ukuran}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement uuid="76535f22-3355-4347-92bb-bf6763287640" style="Detail" x="370" y="0" width="79" height="15"/>
+				<reportElement uuid="320e3f41-b239-4353-a3ae-e67a27c30145" style="Detail" x="395" y="0" width="79" height="15"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{bahan_keluar_tgl_keluar}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="ac83d162-4d40-4893-b5c4-b48e21e52035" style="Detail" x="449" y="0" width="104" height="15"/>
+				<reportElement uuid="e867c893-be21-4dd5-b175-b0edb1d521d4" style="Detail" x="474" y="0" width="79" height="15"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{bahan_keluar_jumlah}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="126" splitType="Stretch">
+		<band height="124" splitType="Stretch">
 			<line>
-				<reportElement uuid="41912893-0e7a-47e9-886f-e16a233a0fd5" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<reportElement uuid="0bb3e0ab-ef1d-4217-8f27-3964a872369a" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement uuid="9df91fc4-766c-4e1d-84b0-02d119f5503c" style="SubTitle" x="344" y="15" width="57" height="16" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="9df91fc4-766c-4e1d-84b0-02d119f5503c" style="SubTitle" x="381" y="40" width="133" height="16" forecolor="#000000" backcolor="#000000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S.E General Manager]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="42ae148c-0f94-4fd1-a2c5-2f8c72402a90" style="Column header" x="406" y="24" width="142" height="16" forecolor="#000000"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE dd MMMMM yyyy",new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="9df91fc4-766c-4e1d-84b0-02d119f5503c" style="SubTitle" x="339" y="24" width="57" height="16" forecolor="#000000" backcolor="#000000"/>
 				<textElement textAlignment="Right">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Jakarta,]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="9df91fc4-766c-4e1d-84b0-02d119f5503c" style="SubTitle" x="391" y="31" width="133" height="16" forecolor="#000000" backcolor="#000000"/>
-				<textElement textAlignment="Right">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[S.E General Manager]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="9df91fc4-766c-4e1d-84b0-02d119f5503c" style="SubTitle" x="432" y="99" width="57" height="16" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="9df91fc4-766c-4e1d-84b0-02d119f5503c" style="SubTitle" x="422" y="108" width="57" height="16" forecolor="#000000" backcolor="#000000"/>
 				<textElement textAlignment="Right">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[(  Marita )]]></text>
 			</staticText>
-			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement uuid="42ae148c-0f94-4fd1-a2c5-2f8c72402a90" style="Column header" x="411" y="15" width="142" height="16" forecolor="#000000"/>
-				<textElement>
-					<font size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE dd MMMMM yyyy",new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
-			</textField>
 		</band>
 	</columnFooter>
 	<pageFooter>
